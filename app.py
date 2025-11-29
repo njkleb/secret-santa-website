@@ -25,9 +25,9 @@ HTML = """
   </style>
 </head>
 <body>
-  <h1>Password Lookup</h1>
+  <h1>2025 Secret Santa!</h1>
   <form method="post" action="/check">
-    <label for="password">Enter password:</label><br/>
+    <label for="password">Enter your secret password:</label><br/>
     <input id="password" name="password" type="text" required autocomplete="off" />
     <button type="submit">Submit</button>
   </form>
@@ -52,7 +52,7 @@ def check():
         return render_template_string(HTML, error="Please enter a password.")
     if pwd in DATA_TABLE:
         return render_template_string(HTML, result=DATA_TABLE[pwd])
-    return render_template_string(HTML, error="Incorrect password")
+    return render_template_string(HTML, error="Invalid password")
 
 if __name__ == "__main__":
     # Development server (not used on Render)
