@@ -27,13 +27,13 @@ HTML = """
 <body>
   <h1>Password Lookup</h1>
   <form method="post" action="/check">
-    <label for="password">Enter password (string):</label><br/>
+    <label for="password">Enter password:</label><br/>
     <input id="password" name="password" type="text" required autocomplete="off" />
     <button type="submit">Submit</button>
   </form>
 
   {% if result %}
-    <div class="result">Your word is: {{ result }}</div>
+    <div class="result">You will be giving a gift to: {{ result }}</div>
   {% elif error %}
     <div class="error">{{ error }}</div>
   {% endif %}
